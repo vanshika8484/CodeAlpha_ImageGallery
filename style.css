@@ -51,7 +51,7 @@ body {
   width: 100%;
   max-width: 300px;
   height: 300px;
-  filter: grayscale(100%);
+  filter: grayscale(0);
   transition: transform 0.5s, filter 0.5s;
   border-radius: 20px;
   border: 2px solid rgb(149, 177, 230);
@@ -59,7 +59,7 @@ body {
 }
 
 .gallery div img:hover {
-  filter: grayscale(0);
+  filter: grayscale(100%);
   cursor: pointer;
   transform: scale(1.1);
 }
