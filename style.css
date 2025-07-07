@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  font-family: sans-serif;
+  background-image: linear-gradient(rgb(233, 141, 141), rgb(211, 159, 224), rgb(238, 211, 91));
+}
+
+.gallery-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10% auto;
+  flex-wrap: wrap;
+}
+
+#leftbtn, #rightbtn {
+  width: 50px;
+  height: 50px;
+  margin: 20px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.gallery {
+  width: 100%;
+  max-width: 1000px;
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+}
+
+.gallery::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery div {
+  flex: none;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 20px;
+  padding: 10px;
+}
+
+.gallery div img {
+  width: 100%;
+  max-width: 300px;
+  height: 300px;
+  filter: grayscale(100%);
+  transition: transform 0.5s, filter 0.5s;
+  border-radius: 20px;
+  border: 2px solid rgb(149, 177, 230);
+  box-shadow: 5px 5px 15px rgba(177, 109, 70, 0.5);
+}
+
+.gallery div img:hover {
+  filter: grayscale(0);
+  cursor: pointer;
+  transform: scale(1.1);
+}
+@media (max-width: 768px) {
+  .gallery div {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+
+  #leftbtn, #rightbtn {
+    width: 40px;
+    height: 40px;
+    margin: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery div {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  }
+
+  .gallery-wrap {
+    flex-direction: column;
+    margin: 20% auto;
+  }
+}
+@media (max-width: 768px) {
+  .gallery div img:hover {
+    transform: scale(1.1); 
+}
+}
+@media (min-width: 480px) {
+  .gallery div img:hover {
+    transform: scale(1.05);
+}
+}
